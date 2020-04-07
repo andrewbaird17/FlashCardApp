@@ -1,8 +1,10 @@
 import React from 'react';
+import CardsAPI from './FlashCardAPI'
 import logo from './logo.svg';
 import './App.css';
+import { render } from '@testing-library/react';
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,5 +24,5 @@ function App() {
     </div>
   );
 }
-
 export default App;
+*/
