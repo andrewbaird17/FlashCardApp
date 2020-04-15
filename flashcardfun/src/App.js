@@ -33,6 +33,13 @@ class Collection extends Component {
 		title: null,
 		cards: [{}],
 	};
+	componentDidMount() {
+		this.setState({
+			id: this.props.id,
+			title: this.props.title,
+			cards: this.props.cards,
+		});
+	}
 	render() {
 		const collection = this.props;
 		return (
