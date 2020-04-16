@@ -45,6 +45,9 @@ class Collection extends Component {
 		return (
 			<div className="collection">
 				<div className="info">
+					{/* make the collection expandable with a Click
+					Be able to click through the collections
+					Show which collection is active  */}
 					<div className="title">{collection.title}</div>
 					<CardList cards={this.state.cards} />
 				</div>
@@ -79,10 +82,14 @@ class Card extends Component {
 	render() {
 		const card = this.props;
 		return (
-			<div className="card">
-				<div className="info">
-					<div className="word">{card.word}</div>
-					<div className="definition">{card.definition}</div>
+			<div className="flip-card">
+				<div className="flip-card-inner">
+					<div className="flip-card-front">
+						<p>{card.word}</p>
+					</div>
+					<div className="flip-card-back">
+						<p>{card.definition}</p>
+					</div>
 				</div>
 			</div>
 		);
