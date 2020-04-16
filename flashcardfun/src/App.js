@@ -44,11 +44,11 @@ class Collection extends Component {
 		const collection = this.props;
 		return (
 			<div className="collection">
-				<div className="info">
-					{/* make the collection expandable with a Click
+				{/* make the collection expandable with a Click
 					Be able to click through the collections
 					Show which collection is active  */}
-					<div className="title">{collection.title}</div>
+				<button className="btn">{collection.title}</button>
+				<div className="cards">
 					<CardList cards={this.state.cards} />
 				</div>
 			</div>
