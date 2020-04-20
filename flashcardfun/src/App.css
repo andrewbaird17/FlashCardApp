@@ -29,8 +29,9 @@ button {
 	cursor: pointer;
 	font-size: 18px;
 }
+
 .active,
-.btn:hover {
+.btn:active {
 	background-color: green;
 	color: white;
 }

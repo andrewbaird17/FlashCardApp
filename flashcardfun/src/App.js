@@ -28,17 +28,28 @@ const CollectionList = (props) => (
 } */
 
 class Collection extends Component {
-	state = {
-		id: null,
-		title: null,
-		cards: [{}],
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			id: null,
+			title: null,
+			cards: [{}],
+		};
+		this.handleClick = this.handleClick.bind(this);
+	}
+
 	componentDidMount() {
 		this.setState({
 			id: this.props.id,
 			title: this.props.title,
 			cards: this.props.cards,
+			isClicked: false,
 		});
+	}
+	handleClick() {
+		this.setState((state) => ({
+			isClicked: !state.isClicked,
+		}));
 	}
 	render() {
 		const collection = this.props;
@@ -47,7 +58,10 @@ class Collection extends Component {
 				{/* make the collection expandable with a Click
 					Be able to click through the collections
 					Show which collection is active  */}
-				<button className="btn">{collection.title}</button>
+				<button className="btn" onClick={this.handleClick}>
+					{collection.title}
+				</button>
+
 				<div className="cards">
 					<CardList cards={this.state.cards} />
 				</div>
@@ -76,10 +90,12 @@ class Card extends Component {
 			id: this.props.id,
 			definition: this.props.definition,
 			word: this.props.word,
+			showBack: false,
 		});
 	}
 
 	render() {
+		console.log(this);
 		const card = this.props;
 		return (
 			<div className="flip-card">
