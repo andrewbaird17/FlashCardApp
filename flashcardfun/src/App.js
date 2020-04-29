@@ -40,7 +40,7 @@ class Collection extends Component {
 		if (this.state.isClicked) {
 			return (
 				<div className="collection">
-					<button className="btn" onClick={this.handleClick}>
+					<button className="btn active" onClick={this.handleClick}>
 						{collection.title}
 					</button>
 					<div className="cards">
@@ -99,12 +99,12 @@ class Card extends Component {
 		console.log(this);
 		//const card = this.props;
 		return (
-			<div className="flip-card" onClick={this.handleClick}>
+			<div className="flip-card">
 				<div className="flip-card-inner">
-					<div className="flip-card-front">
+					<div className="flip-card-front" onClick={this.handleClick}>
 						<p>{this.state.word}</p>
 					</div>
-					<div className="flip-card-back">
+					<div className="flip-card-back" onClick={this.handleClick}>
 						<p>{this.state.definition}</p>
 					</div>
 				</div>
