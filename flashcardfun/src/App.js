@@ -22,12 +22,14 @@ class App extends Component {
 			<div>
 				<div className="header">
 					<h1>Flash Card Pratice</h1>
-					<p>
-						Select one of the collections, active collections will be highlighed
-						in blue.
-						<br />
-						Click each word to reveal its definition!
-					</p>
+					<div className="sub-header">
+						<p>
+							Select one of the collections, active collections will be
+							highlighed in blue.
+							<br />
+							Click each word to reveal its definition!
+						</p>
+					</div>
 				</div>
 				<CollectionList collections={this.state.collections} />
 			</div>
