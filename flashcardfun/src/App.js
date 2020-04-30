@@ -123,9 +123,15 @@ class Card extends Component {
 	render() {
 		console.log(this);
 		return (
-			<div className="flip-card">
-				<div className="flip-card-front" onClick={this.handleClick}>
-					<p>{this.state.showBack ? this.state.definition : this.state.word}</p>
+			<div
+				className={`flip-card ${this.state.showBack ? 'flip' : ''}`}
+				onClick={this.handleClick}
+			>
+				<div className="flip-card-front">
+					<p>{this.state.word}</p>
+				</div>
+				<div className="flip-card-back">
+					<p>{this.state.definition}</p>
 				</div>
 			</div>
 		);

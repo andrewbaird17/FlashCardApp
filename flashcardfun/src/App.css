@@ -41,6 +41,7 @@ button {
 .btn:hover {
 	background-color: green;
 	color: white;
+	box-shadow: 0 0 5px 2px rgba(7, 28, 218, 0.966);
 }
 .title {
 	font-size: 1.25rem;
@@ -66,33 +67,29 @@ button {
 	border: thin solid black;
 	border-radius: 0.5rem;
 	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-	background-color: transparent;
+	background-color: rgb(34, 240, 154);
 	transform-style: preserve-3d;
-	transition: 0.5s;
+	transition: 300ms;
 	cursor: pointer;
-	transform: perspective(1000px) rotateY(180deg, 0) translateY(-2px, 0);
 }
 
 .flip-card:hover {
-	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.775);
 }
 
-.flip-card-front,
-.flip-card-back {
+.flip-card.flip {
+	transform: rotateY(180deg);
+}
+
+.flip-card .flip-card-front,
+.flip-card .flip-card-back {
 	position: absolute;
 	padding: 1rem;
-	width: 100%;
+	width: 95%;
 	height: 100%;
 	backface-visibility: hidden;
 }
 
-.flip-card-front {
-	background-color: white;
-	color: black;
-}
-
-.flip-card-back {
-	background-color: white;
-	color: black;
+.flip-card .flip-card-back {
 	transform: rotateY(180deg);
 }
