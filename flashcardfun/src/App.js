@@ -2,6 +2,31 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			collections: [],
+		};
+	}
+	componentDidMount() {
+		axios.get('https://localhost:44393/api/collection').then((response) =>
+			this.setState({
+				collections: response.data,
+			})
+		);
+	}
+
+	render() {
+		return (
+			<div>
+				<div className="header">{this.props.title}</div>
+				<CollectionList collections={this.state.collections} />
+			</div>
+		);
+	}
+}
+
 const CollectionList = (props) => (
 	<div>
 		{props.collections.map((collection) => (
@@ -43,7 +68,7 @@ class Collection extends Component {
 					<button className="btn active" onClick={this.handleClick}>
 						{collection.title}
 					</button>
-					<div className="cards">
+					<div>
 						<CardList cards={this.state.cards} />
 					</div>
 				</div>
@@ -99,40 +124,12 @@ class Card extends Component {
 		console.log(this);
 		return (
 			<div className="flip-card">
-				<div className="flip-card-inner">
-					<div className="flip-card-front" onClick={this.handleClick}>
-						<p>
-							{this.state.showBack ? this.state.definition : this.state.word}
-						</p>
-					</div>
+				<div className="flip-card-front" onClick={this.handleClick}>
+					<p>{this.state.showBack ? this.state.definition : this.state.word}</p>
 				</div>
 			</div>
 		);
 	}
 }
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			collections: [],
-		};
-	}
-	componentDidMount() {
-		axios.get('https://localhost:44393/api/collection').then((response) =>
-			this.setState({
-				collections: response.data,
-			})
-		);
-	}
-
-	render() {
-		return (
-			<div>
-				<div className="header">{this.props.title}</div>
-				<CollectionList collections={this.state.collections} />
-			</div>
-		);
-	}
-}
 export default App;
