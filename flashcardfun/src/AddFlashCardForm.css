@@ -1,0 +1,12 @@
+.AddFlashCardForm {
+	width: 80%;
+	margin: 50px 10%;
+}
+
+.AddFlashCardForm__input {
+	margin-bottom: 20px;
+}
+
+.AddFlashCardForm__input > label {
+	display: block;
+}

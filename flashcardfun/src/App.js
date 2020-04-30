@@ -20,7 +20,15 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<div className="header">{this.props.title}</div>
+				<div className="header">
+					<h1>Flash Card Pratice</h1>
+					<p>
+						Select one of the collections, active collections will be highlighed
+						in blue.
+						<br />
+						Click each word to reveal its definition!
+					</p>
+				</div>
 				<CollectionList collections={this.state.collections} />
 			</div>
 		);
