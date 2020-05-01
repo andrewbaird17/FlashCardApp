@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import AddFlashCardForm from './AddFlashCardForm.js';
+import { render } from 'react-dom';
 
 class App extends Component {
 	constructor(props) {
@@ -65,6 +66,7 @@ class Collection extends Component {
 			isClicked: false,
 		});
 	}
+
 	handleClick(event) {
 		event.preventDefault();
 		this.setState({
@@ -79,7 +81,12 @@ class Collection extends Component {
 					<button className="btn active" onClick={this.handleClick}>
 						{collection.title}
 					</button>
-					<AddFlashCardForm id={this.state.id} />
+					<AddFlashCardForm
+						id={this.state.id}
+						onAddCard={(item) => {
+							this.state.cards.push(item);
+						}}
+					/>
 					<div>
 						<CardList cards={this.state.cards} />
 					</div>

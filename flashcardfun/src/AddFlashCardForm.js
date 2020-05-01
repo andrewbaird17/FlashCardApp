@@ -35,6 +35,7 @@ class FlashCardForm extends Component {
 			data: cardAdd,
 		}).then((result) => {
 			console.log(result);
+			this.props.onAddCard(result.data);
 		});
 		this.setState({
 			word: '',
@@ -80,7 +81,7 @@ function AddFlashCard(props) {
 	return (
 		<div className="AddFlashCardForm">
 			<h3>Add Flash Card</h3>
-			<FlashCardForm id={props.id} />
+			<FlashCardForm id={props.id} onAddCard={props.onAddCard} />
 		</div>
 	);
 }
