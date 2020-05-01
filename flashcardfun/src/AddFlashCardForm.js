@@ -36,6 +36,10 @@ class FlashCardForm extends Component {
 		}).then((result) => {
 			console.log(result);
 		});
+		this.setState({
+			word: '',
+			definition: '',
+		});
 	}
 
 	onFieldChange(event) {
