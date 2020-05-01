@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import AddFlashCardForm from './AddFlashCardForm.js';
 
 class App extends Component {
 	constructor(props) {
@@ -78,6 +79,7 @@ class Collection extends Component {
 					<button className="btn active" onClick={this.handleClick}>
 						{collection.title}
 					</button>
+					<AddFlashCardForm id={this.state.id} />
 					<div>
 						<CardList cards={this.state.cards} />
 					</div>
@@ -131,7 +133,6 @@ class Card extends Component {
 	}
 
 	render() {
-		console.log(this);
 		return (
 			<div
 				className={`flip-card ${this.state.showBack ? 'flip' : ''}`}
