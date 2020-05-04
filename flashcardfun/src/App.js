@@ -3,8 +3,6 @@ import axios from 'axios';
 import './App.css';
 import AddFlashCardForm from './AddFlashCardForm.js';
 import AddStackForm from './AddStack.js';
-import { render } from 'react-dom';
-import AddStack from './AddStack';
 
 class App extends Component {
 	constructor(props) {
@@ -38,6 +36,12 @@ class App extends Component {
 				<div>
 					<AddStackForm />
 				</div>
+				<h2
+					id="collectionTitle"
+					style={{ fontWeight: 'bold', textDecoration: 'underline overline' }}
+				>
+					Collections
+				</h2>
 				<CollectionList collections={this.state.collections} />
 			</div>
 		);
@@ -93,6 +97,7 @@ class Collection extends Component {
 						}}
 					/>
 					<div>
+						<h4># of Cards in Collection: {this.state.cards.length}</h4>
 						<CardList cards={this.state.cards} />
 					</div>
 				</div>

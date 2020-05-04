@@ -17,6 +17,10 @@
 	margin: 0.5rem;
 }
 
+#collectionTitle {
+	margin: 15px;
+}
+
 body {
 	text-align: center;
 	background-color: lightblue;
