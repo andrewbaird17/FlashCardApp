@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import AddFlashCardForm from './AddFlashCardForm.js';
+import AddStackForm from './AddStack.js';
 import { render } from 'react-dom';
+import AddStack from './AddStack';
 
 class App extends Component {
 	constructor(props) {
@@ -32,6 +34,9 @@ class App extends Component {
 							Click each word to reveal its definition!
 						</p>
 					</div>
+				</div>
+				<div>
+					<AddStackForm />
 				</div>
 				<CollectionList collections={this.state.collections} />
 			</div>

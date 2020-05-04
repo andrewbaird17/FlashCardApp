@@ -53,7 +53,7 @@ class FlashCardForm extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<div className="AddFlashCardForm__input">
-						<label htmlFor="word">Word</label>
+						<label htmlFor="word">Word </label>
 						<input
 							type="text"
 							name="word"
@@ -62,7 +62,7 @@ class FlashCardForm extends Component {
 						/>
 					</div>
 					<div className="AddFlashCardForm__input">
-						<label htmlFor="definition">Definition</label>
+						<label htmlFor="definition">Definition </label>
 						<input
 							type="text"
 							name="definition"
